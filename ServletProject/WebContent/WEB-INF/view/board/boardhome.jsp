@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+board home
 </body>
 </html>

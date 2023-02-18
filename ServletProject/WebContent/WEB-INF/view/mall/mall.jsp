@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+상품몰은 준비중 ~
 </body>
 </html>
