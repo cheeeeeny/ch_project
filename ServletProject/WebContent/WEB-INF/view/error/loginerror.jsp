@@ -7,7 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
+로그인 에러 발생!!! 
+> 다시 로그인페이지로
+//todo alert창 표시하기
 
-alter.log("회원가입으로 이동합니다")
+
+
 </body>
 </html>

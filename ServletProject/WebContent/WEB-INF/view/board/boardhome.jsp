@@ -4,9 +4,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>tirpwithme</title>
 </head>
 <body>
 board home
+
+<button onclick="location.href='<%=request.getContextPath()%>/main'">back</button>	 
+<button onclick="location.href='<%=request.getContextPath()%>/mypage'">mypage</button>
+<button onclick="location.href='<%=request.getContextPath()%>/logout'">logout</button>
+
+
 </body>
 </html>

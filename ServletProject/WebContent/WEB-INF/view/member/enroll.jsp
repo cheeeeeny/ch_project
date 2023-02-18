@@ -7,6 +7,61 @@
 <title>회원가입</title>
 </head>
 <body>
+<%--  test
+<form action="enroll" method="post">
+id<input type="text" name="id" class="input id"><br>
+pw<input type="password" name="pw" class="passwd_1"><br>
+pw확인<input type="password" name="pw2" class="passwd_2"><br>
+이름<input type="text" name="name" ><br>
+별명<input type="text" name="nickname"><br>
+생년월일<input type="text" name="birth"><br>
+전화번호<input type="text" name="phone"><br>
+성별<br>
+남자 <input type="radio" name="gender" value="M">
+여자 <input type="radio" name="gender" value="W"><br>
+이메일<input type="text" name="emial"><br>
+<button type="submit" class="enroll submit">가입하기</button>
+</form>
+
+<script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+<script>
+$('.input_id'),focusout(funcion(){
+	let userID = $('.input_id').val(); // input_id에 입력되는값
+	
+	$ajax({
+		url : "IdCheckService",
+		type : "post",
+		data : {userId: userId},
+		dataType : 'json',
+		sucess : function(result){
+			if(result == 0) {
+				$(checkID).html('사용할 수 없는 아이디입니다.');
+				$(checkID).attr('color','red');
+			} else {
+				$(checkID).html('사용할 수 있는 아이디입니다.');
+				$(checkID).attr('color','green');
+				
+			}
+		},
+		error : funtion({
+			alert("서버요청실패") 
+			}
+	})
+})
+
+
+
+
+
+$(".enroll.submit").on("click",ClickEnrollSubmt)
+
+function ClickEnrollSubmt() {
+	console.log("회원가입이 완료되었습니다. 로그인 페이지로 이동합니다.")
+	location.href="<%=request.getContextPath()%>/home"; 
+}
+</script>
+
+--%>
 
 	<h1>tripwithme</h1>
 	회원가입페이지입니다.
@@ -66,6 +121,9 @@
 			location.href="<%=request.getContextPath()%>/home"; 
 		}
 	</script>
+
+
+
 
 
 </body>
