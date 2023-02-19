@@ -10,9 +10,9 @@
 <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
-<body class="text-center" padding=30px;>
+<body class="text-center" >
 
-<%-- 
+
  	<h1>Welcome</h1>
 	
 	DO YOU WANNA TRIP?<br>
@@ -54,9 +54,9 @@
 			location.href="<%=request.getContextPath()%>/findpw"; 
 		}
 	</script>
-	--%>
 	
-
+	
+<%-- 
 	부트스트랩에서 가져옴
 	<br>
 	<form action="login" method="post">
@@ -99,7 +99,7 @@
 			location.href="<%=request.getContextPath()%>/findpw"; 
 		}
 	</script>
-	
+	--%>
 
 
 
