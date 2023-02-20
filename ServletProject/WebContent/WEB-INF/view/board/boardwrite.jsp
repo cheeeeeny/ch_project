@@ -27,44 +27,62 @@
 	<button onclick="location.href='<%=request.getContextPath()%>/mypage'">mypage</button>
 	<button onclick="location.href='<%=request.getContextPath()%>/logout'">logout</button>
 
+
 	<div>
 		<br> 여백<br>
 	</div>
 	<div class="container text-center">
 		<div class="row">
-			<div class="card text-bg-primary mb-3">
-			<div class="col-2">
-				<div>
-					프로필사진<br> 닉네임<br> 아이디<br> 한줄소개<br> 등급
+				<div class="col-2">
+					<div>
+						프로필사진<br> 닉네임<br> 아이디<br> 한줄소개<br> 등급
+					</div>
+					<nav>
+						<div>
+							<button class="boardmenu"
+								onclick="location.href='<%=request.getContextPath()%>/boardhome'">홈</button>
+						</div>
+						<div>
+							<button class="boardmenu"
+								onclick="location.href='<%=request.getContextPath()%>/community'">모임</button>
+						</div>
+						<div>
+							<button class="boardmenu"
+								onclick="location.href='<%=request.getContextPath()%>/boardwrite'">글쓰기</button>
+						</div>
+
+					</nav>
 				</div>
-				<nav>
-					<div class="boardmenu" onclick="boardHome">홈</div>
-					<div class="boardmenu" onclick="community">모임</div>
-					<div class="boardmenu" onclick="boardWrite">글쓰기</div>
-				</nav>
-			</div>
-			<div class="col-7">
-			<div>
-				<form action=""></form>
-				<div>
-				<input type="text" placeholder="제목을 입력하세요">
+				<div class="col-7">
+					<div>
+						<form action="boardwrite">
+							<table border="1" cellspacing="0" width="300" cellpadding="5">
+								<tr>
+									<th>작성자</th>
+									<td><input type="text" name="writer"
+										placeholder="제목을 입력하세요"></td>
+								</tr>
+								<tr>
+									<th>글제목</th>
+									<td><input type="text" name="title"></td>
+								</tr>
+								<tr>
+									<th>글내용</th>
+									<td><textarea rows="7" cols="25" name="content"
+											placeholder="내용을 입력하세요"></textarea></td>
+								</tr>
+								<tr>
+									<td colspan="2" align="center">
+										<button type="submit" class="btn Submit">확인</button>
+										<button type="button" class="btn Cancle"
+											onclick="history.back()">취소</button>
+										<button type="reset" class="btn Reset">다시작성하기</button>
+									</td>
+								</tr>
+							</table>
+						</form>
+					</div>
 				</div>
-				<div>
-				<input type="text" placeholder="내용을 입력하세요">
-				</div>
-				<div>
-				
-				</div>
-				<div>
-				<button type="submit" class="btn Submit">확인</button>
-				<button type="button" class="btn Cancle">취소</button>
-				<button type="submit" class="btn Delete">삭제</button>
-				</div>
-				
-				
-			</div>
-			</div>
-</div>
 			<div class="col-3">
 				<button onclick="location.href='<%=request.getContextPath()%>/mall'">쇼핑몰바로가기</button>
 				<br>
@@ -92,7 +110,7 @@
 		function BtnCancle() {
 			console.log("취소하여 이전페이지로 이동")
 			location.href="<%=request.getContextPath()%>
-		/돌아가는페이지입력하기";
+		/rollback";
 		}
 	</script>
 
