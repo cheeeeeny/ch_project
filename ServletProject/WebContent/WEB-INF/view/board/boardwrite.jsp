@@ -55,7 +55,7 @@
 				</div>
 				<div class="col-7">
 					<div>
-						<form action="boardwrite">
+						<form action="boardwrite" method="post">
 							<table border="1" cellspacing="0" width="300" cellpadding="5">
 								<tr>
 									<th>작성자</th>

@@ -40,13 +40,14 @@ mypage post 작업 필요합니당
   
     
     	 <article>
+    	 	<c:forEach items="${enroll }" var="vo" varStatus="s">
 			<div>
 				<button onclick="location.href='<%=request.getContextPath()%>/myinfo'">내프로필</button>	
 			
 			</div>
 			<div>
 				이름값도출 
-			
+				${vo.Id}
 			</div>
 			<div>
 				별명
@@ -83,6 +84,7 @@ mypage post 작업 필요합니당
 			<div>
 				저장한 게시글
 			</div>
+			</c:forEach >
 		</article>
 		 
   <%-- 	<form action="<%= request.getContextPath() %>/enroll" method="post" id="myinfoForm" name="myinfoForm">

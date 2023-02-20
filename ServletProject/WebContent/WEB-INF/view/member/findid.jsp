@@ -19,9 +19,12 @@
 					<button type="button" class="btn findpw">PW 찾기</button>
 				</div>
 				<div>
-					이름<input type="text" name="name" placeholder="이름"> 
-					<br> 
-					이메일<input type="text" name="email" placeholder="이메일" > 
+					<a>이름</a><br> 
+					<input type="text" name="name" placeholder="이름"> 
+				</div>
+				<div>
+					<a>이메일</a><br> 	
+					<input type="text" name="email" placeholder="이메일" > 
 				</div>
 				<br>
 				<div>
