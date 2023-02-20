@@ -7,9 +7,9 @@
 <title>main</title>
 </head>
 <body>
-/로고를 삽입하세요/
+<img href<%="./WEB-INF/css/img/logo.png"%>>
 
-<h1>쇼핑몰과 커뮤니티중 선택하세요</h1>
+<h1>Tripwithme</h1>
 <br>
 <button onclick="location.href='<%=request.getContextPath()%>/mall'">쇼핑몰로 이동</button>
 <button onclick="location.href='<%=request.getContextPath()%>/boardhome'">커뮤니티로 이동</button>

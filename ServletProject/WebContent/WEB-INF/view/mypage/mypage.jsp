@@ -15,6 +15,9 @@
 프로필사진변경
 문의하기
 
+
+mypage post 작업 필요합니당
+------------------------------
 <div class="container text-center">
   <div class="row">
     <div class="col-4">tripwithme</div>
@@ -43,7 +46,7 @@
 			</div>
 			<div>
 				이름값도출 
-				%= vo.getName() %  
+			
 			</div>
 			<div>
 				별명

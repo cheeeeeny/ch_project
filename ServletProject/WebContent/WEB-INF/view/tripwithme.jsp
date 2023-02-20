@@ -19,7 +19,7 @@
 	TRIP WITH ME!
 
  	<section>
-		<form action="login" method="post">
+		<form action="login" method="post" class="box">
 			id<input type="text" placeholder="아이디" name="id" > 
 			<br>
 			pw<input type="password" placeholder="비밀번호" name="passwd" >
@@ -107,6 +107,5 @@
 
 
 	
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>	
 </body>
 </html>
