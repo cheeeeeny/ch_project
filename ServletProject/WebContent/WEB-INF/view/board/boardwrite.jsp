@@ -33,56 +33,69 @@
 	</div>
 	<div class="container text-center">
 		<div class="row">
-				<div class="col-2">
+			<div class="col-2">
+				<div>
+					프로필사진<br> 닉네임<br> 아이디<br> 한줄소개<br> 등급
+				</div>
+				<nav>
 					<div>
-						프로필사진<br> 닉네임<br> 아이디<br> 한줄소개<br> 등급
+						<button class="boardmenu"
+							onclick="location.href='<%=request.getContextPath()%>/boardhome'">홈</button>
 					</div>
-					<nav>
-						<div>
-							<button class="boardmenu"
-								onclick="location.href='<%=request.getContextPath()%>/boardhome'">홈</button>
-						</div>
-						<div>
-							<button class="boardmenu"
-								onclick="location.href='<%=request.getContextPath()%>/community'">모임</button>
-						</div>
-						<div>
-							<button class="boardmenu"
-								onclick="location.href='<%=request.getContextPath()%>/boardwrite'">글쓰기</button>
-						</div>
+					<div>
+						<button class="boardmenu"
+							onclick="location.href='<%=request.getContextPath()%>/community'">모임</button>
+					</div>
+					<div>
+						<button class="boardmenu"
+							onclick="location.href='<%=request.getContextPath()%>/boardwrite'">글쓰기</button>
+					</div>
 
-					</nav>
+				</nav>
+			</div>
+			<div class="col-7">
+				<div>
+					<form action="boardwrite" method="post">
+						<table border="1" cellspacing="0" width="300" cellpadding="5">
+							<tr>
+								<th>작성자</th>
+								<td><input type="text" name="writer"
+									placeholder="제목을 입력하세요"></td>
+							</tr>
+							<tr>
+								<th>글제목</th>
+								<td><input type="text" name="title"></td>
+								<th>
+									<div class="dropdown">
+										<a class="btn dropdown-toggle" href="#"
+											role="button" data-bs-toggle="dropdown" aria-expanded="false">
+											카테고리 </a>
+
+										<ul class="dropdown-menu">
+											<li><a class="dropdown-item" href="#">공지사항</a></li>
+											<li><a class="dropdown-item" href="#">일반게시글</a></li>
+											<li><a class="dropdown-item" href="#">모임</a></li>
+										</ul>
+									</div>
+								<th>
+							</tr>
+							<tr>
+								<th>글내용</th>
+								<td><textarea rows="7" cols="25" name="content"
+										placeholder="내용을 입력하세요"></textarea></td>
+							</tr>
+							<tr>
+								<td colspan="2" align="center">
+									<button type="submit" class="btn Submit">확인</button>
+									<button type="button" class="btn Cancle"
+										onclick="history.back()">취소</button>
+									<button type="reset" class="btn Reset">다시작성하기</button>
+								</td>
+							</tr>
+						</table>
+					</form>
 				</div>
-				<div class="col-7">
-					<div>
-						<form action="boardwrite" method="post">
-							<table border="1" cellspacing="0" width="300" cellpadding="5">
-								<tr>
-									<th>작성자</th>
-									<td><input type="text" name="writer"
-										placeholder="제목을 입력하세요"></td>
-								</tr>
-								<tr>
-									<th>글제목</th>
-									<td><input type="text" name="title"></td>
-								</tr>
-								<tr>
-									<th>글내용</th>
-									<td><textarea rows="7" cols="25" name="content"
-											placeholder="내용을 입력하세요"></textarea></td>
-								</tr>
-								<tr>
-									<td colspan="2" align="center">
-										<button type="submit" class="btn Submit">확인</button>
-										<button type="button" class="btn Cancle"
-											onclick="history.back()">취소</button>
-										<button type="reset" class="btn Reset">다시작성하기</button>
-									</td>
-								</tr>
-							</table>
-						</form>
-					</div>
-				</div>
+			</div>
 			<div class="col-3">
 				<button onclick="location.href='<%=request.getContextPath()%>/mall'">쇼핑몰바로가기</button>
 				<br>

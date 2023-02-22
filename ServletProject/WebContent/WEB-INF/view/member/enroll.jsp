@@ -101,7 +101,8 @@ function ClickEnrollSubmt() {
 					</div>
 					<div class="form-group">
 						성별<br>
-						<input type="text" placeholder="성별" name="gender" > 
+						남자 <input type="radio" id="M" name="gender" value="M">
+						여자 <input type="radio" id="W" name="gender" value="W">
 					</div>
 					<div class="form-group">
 						이메일<br>

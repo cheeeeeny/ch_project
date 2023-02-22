@@ -5,94 +5,51 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<!-- CSS only -->
+<title>Tripwithme</title>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
 	rel="stylesheet"
 	integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
 	crossorigin="anonymous">
-<title>Welcome Tripwithme</title>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+	crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.3.js"></script>
 </head>
-<body>
-	<!-- JavaScript Bundle with Popper -->
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-		crossorigin="anonymous"></script>
-	<script src="https://code.jquery.com/jquery-3.6.3.js"></script>
 
-	<style>
-body {
-	background-color: #D2DEF1;
-}
-</style>
+<body class="container-fluid" style="background-color: #D2DEF1;">
 
-	<div class="container-fluid">
-		<div class="container text-center">
-			<div class="row">
-				<div class="col"></div>
+	<body class="text-center" >
 
-				<div class="col">
-					<div class="container text-center">
-						<div class="row" style="padding-top: 40px;">
-							<div class="text-center">
-								<p class="fw-bold fs-1 text-center ">Welcome</p>
-								<br>
-							</div>
 
-							<div class="text-start">
+ 	<h1>Welcome</h1>
+	
+	DO YOU WANNA TRIP?<br>
+	TRIP WITH ME!
 
-								<p class="fs-4 text-start">DO YOU WANNA TRIP?</p>
+ 	<section>
+		<form action="login" method="post" class="box">
+			아이디<br>
+			<input type="text" placeholder="User_Id" name="id" > 
+			<br>
+			비밀번호<br>
+			<input type="password" placeholder="Password" name="passwd" >
+			<br>
+			<button type="submit" class="btn login">로그인하기</button>
+			<br>
+			<button type="button" class="btn enroll">회원가입</button>
+			<br>
+			<button type="button" class="btn findid">ID 찾기</button>
+			<button type="button" class="btn findpw">PW 찾기</button>
+			<br>
+			<button type="button">CONTACT US</button> //todo
+		</form>
+	</section>
+	 
 
-							</div>
-
-							<div class="text-end">
-								<p class="fs-4 text-end" style="color: white;">TRIP WITH ME!</p>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="col"></div>
-			</div>
-		</div>
-		<div class="container">
-			<div class="row">
-				<div class="col"></div>
-				<div class="col container-fluid text-center ">
-					<form action="login" method="post" class="container"
-						style="background: white; padding-left: 15%; padding-right: 15%;">
-						<br>
-						<br> 
-						<input type="text" class="form-control" id="id" placeholder="User_Id"> <br> 
-						<input type="password"class="form-control" id="passwd" placeholder="Password">
-						<br>
-						<button type="submit" class="form-control bold"
-							style="background: white; color: #D2DEF1;">로그인하기</button>
-						<hr>
-						<button type="button" class="btn-enroll form-control bold"
-							style="background: #D2DEF1; color: white;">회원가입</button>
-
-						<button type="button" class="btn findid">ID 찾기</button>
-						<button type="button" class="btn findpw">PW 찾기</button>
-						<br> <br>
-					</form>
-				</div>
-				<div class="col"></div>
-			</div>
-		</div>
-		<div class="container text-center">
-			<div class="row">
-				<div class="col"></div>
-				<div class="col" style="color: grey; padding-top: 20px;">
-					Contact us</div>
-				<div class="col"></div>
-			</div>
-		</div>
-	</div>
-
-	<script>
-		$(".btn-enroll").on("click",handlerClickBtnEnroll);
+   <script>
+		$(".btn.enroll").on("click",handlerClickBtnEnroll);
 		$(".btn.findid").on("click",handlerClickBtnFindid);
 		$(".btn.findpw").on("click",handlerClickBtnFindpw);
 		
@@ -106,17 +63,65 @@ body {
 		}	
 		function handlerClickBtnFindpw() {
 			console.log("비밀번호 찾기 화면으로 이동합니다.")
-			location.href="<%=request.getContextPath()%>
-		/findpw";
+			location.href="<%=request.getContextPath()%>/findpw"; 
 		}
 	</script>
-
-
-
-
+	
 
 
 
 
 </body>
+
+<%-- 
+	부트스트랩에서 가져옴
+	<br>
+	<form action="login" method="post">
+  	<div class="mb-3">
+    	<label for="exampleInputId1" class="form-label">Id</label>
+    	<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    	<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  	</div>
+ 	<div class="mb-3">
+    	<label for="exampleInputPassword1" class="form-label">Password</label>
+    	<input type="password" class="form-control" id="exampleInputPassword1">
+  		Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+ 	</div>
+  		<button type="submit" class="btn login">로그인하기</button>
+			<br>
+			<button type="button" class="btn enroll">회원가입</button>
+			<br>
+		<div>
+			<button type="button" class="btn findid">ID 찾기</button>
+			<button type="button" class="btn findpw">PW 찾기</button>
+		</div>
+			<p><button type="button">CONTACT US</button></p>
+	</form>
+
+ <script>
+		$(".btn.enroll").on("click",handlerClickBtnEnroll);
+		$(".btn.findid").on("click",handlerClickBtnFindid);
+		$(".btn.findpw").on("click",handlerClickBtnFindpw);
+		
+		function handlerClickBtnEnroll() {
+			console.log("회원가입으로 이동합니다")
+			location.href="<%=request.getContextPath()%>/enroll"; 
+		}
+		function handlerClickBtnFindid() {
+			console.log("id찾기 화면으로 이동합니다.")
+			location.href="<%=request.getContextPath()%>/findid"; 
+		}	
+		function handlerClickBtnFindpw() {
+			console.log("비밀번호 찾기 화면으로 이동합니다.")
+			location.href="<%=request.getContextPath()%>/findpw"; 
+		}
+	</script>
+	--%>
+
+
+
+
+
+
+
 </html>

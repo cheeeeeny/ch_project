@@ -5,200 +5,116 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<!-- CSS only -->
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-	crossorigin="anonymous">
-<title>tripwithme : 게시판</title>
+<title>tripwithme : home</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<link rel="stylesheet" href="./WEB-INF/css/mystyle.css">
 </head>
 <body>
-	<!-- JavaScript Bundle with Popper -->
+
 	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+		src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+		integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+		integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
 		crossorigin="anonymous"></script>
 	<script src="https://code.jquery.com/jquery-3.6.3.js"></script>
-	<!-- 페이지 화면 구성 -->
 
 
 
-
-
-
-	<div>
-		<nav class="navbar" style="background-color: #D2DEF1;">
-			<div class="container-fluid">
-				<div class="col-3">
-					<a class="navbar-brand" href="#"> <img
-						src="/resources/image/파일이름" alt="" width="200" height="45"
-						class="d-inline-block text-center">
-					</a>
-				</div>
-				<div class="col"></div>
-				<div class="col-3 text-end">
-					<button type="button" class="btn"
-						style="background: white; color: #a3c2f0;
-						location.href='<%=request.getContextPath()%>/boardhome'">
-						main page</button>
-					<button type="button" class="btn"
-						style="background: white; color: #a3c2f0;
-						location.href='<%=request.getContextPath()%>/logout'">
-						logout</button>
-				</div>
-			</div>
-		</nav>
+	<div class="container text-left">
+		<button onclick="location.href='<%=request.getContextPath()%>/main'">back</button>
+		<button onclick="location.href='<%=request.getContextPath()%>/mypage'">mypage</button>
+		<button onclick="location.href='<%=request.getContextPath()%>/logout'">logout</button>
 	</div>
-	<div class="container-fluid">
+
+
+	<div class="container text-center">
 		<div class="row">
-			<div class="col-2 text-center">
-				<div class="col">
-					<div class="col">
-						<div style="height: 20px;"></div>
-						<div>
-							<img style="height: 20px;" class="img-fluid " src="" alt="">
-						</div>
-						<div style="height: 50px;">
-							<img class="img-fluid rounded-circle" src="" alt=""> <a>프로필사진</a>
-						</div>
-						<div style="height: 10px;">${vo.Name}</div>
-						<div style="height: 10px;">${vo.id}</div>
-						<div style="height: 60px;">
-							<a class="text-center">한 줄 소 개</a>
-						</div>
-						<div class="col">
-							<div>
-								<button type="button" class="btn border-3"
-									style="background: #a3c2f0; color: white; border-color: white; width: 100px;
-						location.href='<%=request.getContextPath()%>/boardhome'">
-									홈</button>
-							</div>
-							<br>
-							<div>
-								<button type="button" class="btn border-3"
-									style="background: white; color: #a3c2f0; border-color: #a3c2f0; width: 100px;
-						location.href='<%=request.getContextPath()%>/community'">
-									모 임</button>
-							</div>
-							<br>
-							<div>
-								<button type="button" class="btn border-3"
-									style="background: white; color: #a3c2f0; border-color: #a3c2f0; width: 100px;
-						location.href='<%=request.getContextPath()%>/boardwrite'">
-									글쓰기</button>
-							</div>
-							<br>
-						</div>
-					</div>
-				</div>
-
+			<div>
+				<br>
+				<br>
 			</div>
-			<div class="col-7 text-center">
-				<div class="col">
-					<div class="row-3 border-bottom">
-						<br>
-						<div class="container-fluid">
+
+			<div class="col-2">
+				<div>
+					프로필사진<br> 닉네임<br> 아이디<br> 한줄소개<br> 등급
+
+				</div>
+				<nav>
+					<div>
+						<button class="boardmenu" onclick="location.href='<%=request.getContextPath()%>/boardhome'">홈</button>
+					</div>
+					<div>
+						<button class="boardmenu" onclick="location.href='<%=request.getContextPath()%>/community'">모임</button>
+					</div>
+					<div>
+						<button class="boardmenu" onclick="location.href='<%=request.getContextPath()%>/boardwrite'">글쓰기</button>
+					</div>
+					
+				</nav>
+			</div>
+
+			<div class="col-7 ">
+				<c:forEach items="${boardlist }" var="vo" varStatus="s">
+					<tr>
+						<td>
 							<div class="card">
-								<div class="card-header">Notice</div>
-								<div class="card-body row text-center text-center">
-									<div class="col-2 text-top">
-										<img>
-										<p class="card-title text-center">아이디</p>
-									</div>
-									<div>
-										<h5 class="col card-title text-center">${vo.boardTitle}
-											공지제목이 보입니다</h5>
-										<a href="#" class="btn btn-light">자세히 보기</a>
-									</div>
+								<div class="card-header">
+									<img src="..." class="img-fluid rounded-start" alt="...">
+									<a>닉네임</a> <a href="#" class="btn btn-outline-light">더보기</a>
+								</div>
+								<div class="card-body">
+									<h5 class="card-title">${vo.boardTitle}</h5>
+									<p class="card-text">${vo.boardContent}여행가고싶다아주많이 ㅠ</p>
+									<a>${boarDate}</a>
 								</div>
 							</div>
-						</div>
-						<br>
-					</div>
-				</div>
+						</td>
+					</tr>
+				</c:forEach>
 				<br>
-				<div class="row-10 text-center">
-					<h3 class="" style="color: #a3c2f0;">커뮤니티</h3>
-					<div class="text-center"
-						style="padding-left: 10px; , padding-right: 10px;">
-						<c:forEach items="${boardlist }" var="vo" varStatus="s">
-							<div class="card mb-3 text-center">
-								<div class="row g-0">
-									<div class="col-md-4">
-										<img src="..." class="img-fluid rounded-start" alt="...">
-									</div>
-									<div class="col-md-8">
-										<div class="card-body">
-											<h5 class="card-title">${vo.boardTitle }</h5>
-											<p class="card-text">
-												<small class="text-muted">Last updated 3 mins ago</small>
-											</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</c:forEach>
-					</div>
-
-				</div>
+				<nav aria-label="Page navigation example">
+					<ul class="pagination justify-content-end">
+						<li class="page-item disabled"><a class="page-link">Previous</a>
+						</li>
+						<li class="page-item"><a class="page-link" href="#">1</a></li>
+						<li class="page-item"><a class="page-link" href="#">2</a></li>
+						<li class="page-item"><a class="page-link" href="#">3</a></li>
+						<li class="page-item"><a class="page-link" href="#">Next</a>
+						</li>
+					</ul>
+				</nav>
 			</div>
-			<div class="col-3 text-center">
-				<br>
-				<div>
-					<form action="search" method="post" class="d-flex" role="search">
-						<input class="form-control me-2" type="search"
-							placeholder="Search" aria-label="Search">
-						<button class="btn btn-outline-success" type="submit">Search</button>
-					</form>
-				</div>
-				<div>쇼핑몰 바로가기 버튼 만들기</div>
-				<div>
-					<p class="text-center">이번주 인기 게시글</p>
-					<button type="button" class="btn btn-outline-secondary text-end">더보기></button>
-				</div>
-				<br>
-				<div>
-					<div class="container text-center">
-						<div class="row border">
-							<div class="col">
-								<p>$title</p>
-								<p>$writer</p>
-							</div>
-							<div class="col">게시글사진</div>
 
-
-						</div>
-						<div class="row border">
-							<div class="col">
-								<p>$title</p>
-								<p>$writer</p>
-							</div>
-							<div class="col">게시글사진</div>
-
-
-						</div>
-						<div class="row border">
-							<div class="col">
-								<p>$title</p>
-								<p>$writer</p>
-							</div>
-							<div class="col">게시글사진</div>
-
-
-						</div>
-					</div>
-				</div>
-
+			<div class="col-3">
+				<button onclick="location.href='<%=request.getContextPath()%>/mall'">쇼핑몰바로가기</button>
+				<br> <input type="text" placeholder="검색어를 입력하세요">
+				<button type="submit">검색</button>
+				<br> 인기게시글
+				<button>더보기></button>
+				<br> 인기게시글 나열
 			</div>
+
 		</div>
-
-
 	</div>
 
 
-
+	<script>
+		function.boardHome(){
+			location.href="<%=request.getContextPath()%>/boardhome";
+		}
+		function.community(){
+			location.href="<%=request.getContextPath()%>/community";
+		}
+		function.boardWrite(){
+			location.href="<%=request.getContextPath()%>/boardwrite";
+		}
+	</script>
 
 
 </body>
 </html>
+
+
