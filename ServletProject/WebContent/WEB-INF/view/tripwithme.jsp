@@ -70,7 +70,7 @@ body {
 						<button type="submit" class="form-control bold"
 							style="background: white; color: #D2DEF1;">로그인하기</button>
 						<hr>
-						<button type="button" class="btn enroll form-control bold"
+						<button type="button" class="btn-enroll form-control bold"
 							style="background: #D2DEF1; color: white;">회원가입</button>
 
 						<button type="button" class="btn findid">ID 찾기</button>
@@ -92,7 +92,7 @@ body {
 	</div>
 
 	<script>
-		$(".btn.enroll").on("click",handlerClickBtnEnroll);
+		$(".btn-enroll").on("click",handlerClickBtnEnroll);
 		$(".btn.findid").on("click",handlerClickBtnFindid);
 		$(".btn.findpw").on("click",handlerClickBtnFindpw);
 		
