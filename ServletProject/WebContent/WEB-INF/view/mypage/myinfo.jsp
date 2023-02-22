@@ -15,6 +15,16 @@
 			<button type="button" class="btn Cancle">취소</button>
 		</form>
 	</section>
+	
+	<c:if test="${not empty myinfo }"></c:if>
+	<div>
+		id    : ${myinfo.id }
+		<br>
+		name  : ${myinfo.name }
+		<br>
+		email : ${myinfo.email }
+	</div>
+	
 
 	<script>
 		$(".btn.submit").on("click",BtnSubmit);

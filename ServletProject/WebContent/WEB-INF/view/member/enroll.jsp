@@ -1,135 +1,91 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>회원가입</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<title>Tripwithme</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+	crossorigin="anonymous">
 </head>
+
 <body>
-<script src="https://code.jquery.com/jquery-3.6.3.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>	
-<%--  test
-<form action="enroll" method="post">
-id<input type="text" name="id" class="input id"><br>
-pw<input type="password" name="pw" class="passwd_1"><br>
-pw확인<input type="password" name="pw2" class="passwd_2"><br>
-이름<input type="text" name="name" ><br>
-별명<input type="text" name="nickname"><br>
-생년월일<input type="text" name="birth"><br>
-전화번호<input type="text" name="phone"><br>
-성별<br>
-남자 <input type="radio" name="gender" value="M">
-여자 <input type="radio" name="gender" value="W"><br>
-이메일<input type="text" name="emial"><br>
-<button type="submit" class="enroll submit">가입하기</button>
-</form>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+		crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.6.3.js"></script>
 
-<script src="https://code.jquery.com/jquery-3.6.3.js"></script>
-<script>
-$('.input_id'),focusout(funcion(){
-	let userID = $('.input_id').val(); // input_id에 입력되는값
-	
-	$ajax({
-		url : "IdCheckService",
-		type : "post",
-		data : {userId: userId},
-		dataType : 'json',
-		sucess : function(result){
-			if(result == 0) {
-				$(checkID).html('사용할 수 없는 아이디입니다.');
-				$(checkID).attr('color','red');
-			} else {
-				$(checkID).html('사용할 수 있는 아이디입니다.');
-				$(checkID).attr('color','green');
-				
-			}
-		},
-		error : funtion({
-			alert("서버요청실패") 
-			}
-	})
-})
-
-
-
-
-
-$(".enroll.submit").on("click",ClickEnrollSubmt)
-
-function ClickEnrollSubmt() {
-	console.log("회원가입이 완료되었습니다. 로그인 페이지로 이동합니다.")
-	location.href="<%=request.getContextPath()%>/home"; 
+	<style>
+body {
+	background-color: #D2DEF1;
 }
-</script>
+</style>
 
---%>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-3"></div>
 
-	
-	<div class="container text-center">
-		<h1>tripwithme</h1>
-		회원가입페이지입니다.
-		<div class="col-lg-4"></div>
-		<div class="col-lg-4">
-			<div style="padding-top: 20px;">
-				<form action="enroll" method="post">
-					<h5>회원가입</h5>
-					<div class="form-group">
-						아이디<br>
-						<input type="text" placeholder="아이디" name="id" > 
+			<div class="col-6">
+				<div class="container text-center">
+					<div class="row" style="padding-top: 40px;">
+						<div class="text-center">
+							<p class="fw-bold fs-1 text-center " style="color:white;">
+							Welcome</p>
+							<br>
+							<p class="text-center fs-4 " style="color:grey;">
+							회원가입 페이지</p><br>
+							<form action="enroll" method="post" class="container text-center"
+								style="background: white; padding: 15%;">
+								<input type="text" class="form-control" name="id" placeholder="User_Id"> <br> 
+								<input type="password" class="form-control" name="passwd" placeholder="Password"><br>
+								<input type="text" class="form-control" name="name" placeholder="Name"><br> 
+								<input type="text" class="form-control" name="nickname" placeholder="별명" >
+								<br> <input type="text" class="form-control" placeholder="생년월일" name="birth"> <br> 
+								<input type="text" class="form-control" placeholder="휴대전화"
+									name="phone"> <br>
+								<div class="form-check text-center">
+									<input class="form-check-input" type="radio" name="gender"
+										value="M"> <label class="form-check-label"
+										for="flexRadioDefault1"> 남자 </label>
+								</div>
+								<div class="form-check text-center">
+									<input class="form-check-input" type="radio" name="gender"
+										value="W"> <label class="form-check-label"
+										for="flexRadioDefault2"> 여자 </label>
+								</div><br>
+								<input type="text" class="form-control" placeholder="이메일"
+									name="email"> <br> 
+								<button type="submit" class="form-control bold enroll-submit"
+									style="background: white; color: #D2DEF1;">가입하기</button>
+							</form>
+						</div>
+						<div class="col-3"></div>
 					</div>
-					<div class="form-group">
-						비밀번호<br>
-						<input type="password" placeholder="비밀번호" name="passwd" >
-					</div>
-					<div class="form-group">
-						이름<br>
-						<input type="text" placeholder="이름" name="name" >
-					</div>
-					<div class="form-group">
-						별명<br>
-						<input type="text" placeholder="별명" name="nickname" > 
-					</div>
-					<div class="form-group">
-						생년월일<br>
-						<input type="text" placeholder="생년월일" name="birth" > 
-					</div>
-					<div class="form-group">
-						휴대전화<br>
-						<input type="text" placeholder="휴대전화" name="phone" > 
-					</div>
-					<div class="form-group">
-						성별<br>
-						남자 <input type="radio" id="M" name="gender" value="M">
-						여자 <input type="radio" id="W" name="gender" value="W">
-					</div>
-					<div class="form-group">
-						이메일<br>
-						<input type="text" placeholder="이메일" name="email" > 
-					</div>
-					<div class="form-group">
-						<button type="submit" class="enroll submit">가입하기</button>
-					</div>
-				</form>
+				</div>
 			</div>
 		</div>
 	</div>
-	
-	
+
+
+
+
+	<%-- 오류 수정된 코드 --%>
 	<script>
-		$(".enroll.submit").on("click",ClickEnrollSubmt)
+		$(".enroll-submit").on("click",ClickEnrollSubmt)
 		
 		function ClickEnrollSubmt() {
 			console.log("회원가입이 완료되었습니다. 로그인 페이지로 이동합니다.")
 			location.href="<%=request.getContextPath()%>/home"; 
 		}
 	</script>
-
-
-
-
-
 </body>
+
+
 </html>
- 
+
+
