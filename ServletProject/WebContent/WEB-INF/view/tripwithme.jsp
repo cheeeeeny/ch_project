@@ -113,7 +113,10 @@ body {
 		
 	</script>
 
-
+	<script>
+      var jbResult = confirm( 'welcome' );
+      document.write( jbResult );
+    </script>
 
 
 

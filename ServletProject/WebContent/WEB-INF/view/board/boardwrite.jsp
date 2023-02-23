@@ -31,15 +31,16 @@
 		<nav class="navbar" style="background-color: #D2DEF1;">
 			<div class="container-fluid">
 				<div class="col-3">
-					<a class="navbar-brand" href="#"> <img src=""
-						width="200" height="45" class="d-inline-block text-center">
+					<a class="navbar-brand" href="#"> <img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/583a5237-4a7c-4293-93f3-928fb59c131b/logo.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230223%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230223T014449Z&X-Amz-Expires=86400&X-Amz-Signature=076824296e2c31332787a7605d4d401cb178aba2b51cf245324173ee183e5065&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22logo.jpg%22&x-id=GetObject" width="200"
+						height="45" class="d-inline-block text-center">
 					</a>
 				</div>
 				<div class="col"></div>
 				<div class="col-3 text-end">
 					<button type="button" class="btn"
 						style="background: white; color: #a3c2f0;"
-						onclick="location.href='<%=request.getContextPath()%>/mypage'">my page</button>
+						onclick="location.href='<%=request.getContextPath()%>/mypage'">my
+						page</button>
 					<button type="button" class="btn"
 						style="background: white; color: #a3c2f0;"
 						onclick="location.href='<%=request.getContextPath()%>/logout'">logout</button>
@@ -58,7 +59,9 @@
 							<img style="height: 20px;" class="img-fluid " src="" alt="">
 						</div>
 						<div style="height: 50px;">
-							<img class="img-fluid rounded-circle" src="" alt=""> <a>프로필사진</a>
+						<button type="button" class="btn"
+						style="background: white; color: #a3c2f0;"
+						onclick="location.href='<%=request.getContextPath()%>/mypage'">my page</button>
 						</div>
 						<c:forEach items="${memberlist }" var="vo">
 							<div style="height: 10px;">${vo.Name}</div>
@@ -70,7 +73,7 @@
 						<div class="col">
 							<div>
 								<button type="button" class="btn border-3"
-									style="background: #a3c2f0; color: white; border-color: white; width: 100px;"
+									style="background: white; color: #a3c2f0; border-color: #a3c2f0; width: 100px;"
 									onclick="location.href='<%=request.getContextPath()%>/boardhome'">
 									홈</button>
 							</div>
@@ -84,7 +87,7 @@
 							<br>
 							<div>
 								<button type="button" class="btn border-3"
-									style="background: white; color: #a3c2f0; border-color: #a3c2f0; width: 100px;"
+									style="background: #a3c2f0; color: white; border-color: white; width: 100px;"
 									onclick="location.href='<%=request.getContextPath()%>/boardwrite'">
 									글쓰기</button>
 							</div>
@@ -97,54 +100,55 @@
 			<div class="col-7 text-center">
 				<div>
 					<form action="boardwrite" method="post">
-						<table border="1" cellspacing="0" width="300" cellpadding="5">
-							<tr>
-								<th>작성자</th>
-								<td><input type="text" name="boardWriter"
-									placeholder="제목을 입력하세요"></td>
-							</tr>
-							<tr>
-								<th>글제목</th>
-								<td><input type="text" name="boardTitle"></td>
-								<th>
-									<div class="dropdown">
-										<a class="btn dropdown-toggle" href="#" role="button"
-											data-bs-toggle="dropdown" aria-expanded="false"> 카테고리 </a>
-
-										<ul class="dropdown-menu">
-											<li><a class="dropdown-item" href="#">공지사항</a></li>
-											<li><a class="dropdown-item" href="#">일반게시글</a></li>
-											<li><a class="dropdown-item" href="#">모임</a></li>
-										</ul>
-									</div>
-								<th>
-							</tr>
-							<tr>
-								<th>글내용</th>
-								<td><textarea rows="7" cols="25" name="boardContent"
-										placeholder="내용을 입력하세요"></textarea></td>
-							</tr>
-							<tr>
-								<td colspan="2" align="center">
-									<button type="submit" class="btn Submit">확인</button>
-									<button type="button" class="btn Cancle"
+						<div class="row mb-3" style="padding-top : 10%;">
+							<label for="title" class="col-sm-2 col-form-label">제목</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" name="boardTitle">
+							</div>
+						</div>
+						<div class="row mb-3" >
+							<label for="title" class="col-sm-2 col-form-label">작성자</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" name="boardWriter">
+							</div>
+						</div>
+						<div class="row mb-3">
+							<label for="content" class="col-sm-2 col-form-label">내용</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" name="boardContent"
+								style="height: 300px;">
+							</div>
+						</div>
+						<fieldset class="row mb-3">
+							<legend class="col-form-label col-sm-2 pt-0">카테고리</legend>
+							<div class="col-sm-10">
+								<div class="form-check text-start">
+									<input class="form-check-input" type="radio" name="gridRadios"
+										id="gridRadios1" value="option1" checked> <label
+										class="form-check-label" for="gridRadios1"> 공지사항 </label>
+								</div>
+								<div class="form-check text-start">
+									<input class="form-check-input" type="radio" name="gridRadios"
+										id="gridRadios2" value="option2"> <label
+										class="form-check-label" for="gridRadios2"> 자유게시글 </label>
+								</div>
+								<div class="form-check text-start">
+									<input class="form-check-input" type="radio" name="gridRadios"
+										id="gridRadios3" value="option3"> <label
+										class="form-check-label" for="gridRadios3"> 모임 </label>
+								</div>
+							</div>
+						</fieldset>
+						<div class="row mb-3"></div>
+						<button type="reset" class="btn btn-primary">다시작성하기</button>
+						<button type="submit" class="btn btn-primary">확인</button>
+						<button type="button" class="btn btn-primary"
 										onclick="history.back()">취소</button>
-									<button type="reset" class="btn Reset">다시작성하기</button>
-								</td>
-							</tr>
-						</table>
 					</form>
 				</div>
 			</div>
 			<div class="col-3 text-center">
 				<br>
-				<div>
-					<form action="search" method="post" class="d-flex" role="search">
-						<input class="form-control me-2" type="search"
-							placeholder="Search" aria-label="Search">
-						<button class="btn btn-outline-success" type="submit">Search</button>
-					</form>
-				</div>
 				<div class="col" style="padding-top: 20px;">
 					<button type="button" class="btn btn-outline-primary" disabled>쇼핑몰바로가기</button>
 				</div>
@@ -195,6 +199,14 @@
 							</div>
 						</div>
 					</div>
+					<br>
+					<div>
+					<form action="search" method="post" class="d-flex" role="search">
+						<input class="form-control me-2" type="search"
+							placeholder="Search" aria-label="Search">
+						<button class="btn btn-outline-success" type="submit">Search</button>
+					</form>
+				</div>
 				</div>
 			</div>
 		</div>

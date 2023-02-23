@@ -31,7 +31,7 @@
 		<nav class="navbar" style="background-color: #D2DEF1;">
 			<div class="container-fluid">
 				<div class="col-3">
-					<a class="navbar-brand" href="#"> <img src="" alt=""
+					<a class="navbar-brand" href="#"> <img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/583a5237-4a7c-4293-93f3-928fb59c131b/logo.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230223%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230223T014449Z&X-Amz-Expires=86400&X-Amz-Signature=076824296e2c31332787a7605d4d401cb178aba2b51cf245324173ee183e5065&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22logo.jpg%22&x-id=GetObject" alt=""
 						width="200" height="45" class="d-inline-block text-center">
 					</a>
 				</div>
@@ -58,9 +58,12 @@
 							<img style="height: 20px;" class="img-fluid " src="" alt="">
 						</div>
 						<div style="height: 50px;">
-							<img class="img-fluid rounded-circle" src="" alt=""> <a>프로필사진</a>
+						<img class="img-fluid rounded-circle" src="" alt=""> <a></a>
+						<button type="button" class="btn"
+						style="background: white; color: #a3c2f0;"
+						onclick="location.href='<%=request.getContextPath()%>/mypage'">my page</button>
 						</div>
-						<c:forEach items="${myinfo }" var="vo">
+						<c:forEach items="${enroll }" var="vo">
 							<div style="height: 10px;">${vo.Name}</div>
 							<div style="height: 10px;">${vo.Id}</div>
 							<div style="height: 60px;">
@@ -99,16 +102,19 @@
 					<div class="row-3 border-bottom">
 						<br>
 						<div class="container-fluid">
+						<br>
 							<div class="card">
 								<div class="card-header">Notice</div>
 								<div class="card-body row text-center text-center">
 									<div class="col-2 text-top">
 										<img>
-										<p class="card-title text-center">아이디</p>
+										<p class="card-title text-center"></p>
 									</div>
 									<div>
-										<h5 class="col card-title text-center">${vo.boardTitle}
-											공지제목이 보입니다</h5>
+										<h5 class="col card-title text-top">${vo.boardTitle}
+											welcome trip with me 
+											coummunity board! </h5>
+											<br>
 										<a href="#" class="btn btn-light">자세히 보기</a>
 									</div>
 								</div>
@@ -146,13 +152,7 @@
 			</div>
 			<div class="col-3 text-center">
 				<br>
-				<div>
-					<form action="search" method="post" class="d-flex" role="search">
-						<input class="form-control me-2" type="search"
-							placeholder="Search" aria-label="Search">
-						<button class="btn btn-outline-success" type="submit">Search</button>
-					</form>
-				</div>
+				
 				<div class="col" style="padding-top:20px;">
 					<button type="button" class="btn btn-outline-primary" disabled>쇼핑몰바로가기</button>
 					</div>
@@ -194,7 +194,14 @@
 							<img src="https://media.istockphoto.com/id/1361407707/ko/%EC%82%AC%EC%A7%84/%EC%95%BC%EC%9E%90-%EC%88%98-%EC%9E%8E-%EC%95%84%EB%9E%98-%EC%97%AC%EC%9E%90.jpg?b=1&s=170667a&w=0&k=20&c=XaCKNLuqxFl9GyeNqtnwVwkWvfbgL0B9v-u7eO6XEsk=" class="img-fluid" alt="...">
 							</div>
 						</div>
-						
+						<br>
+					<div>
+					<form action="search" method="post" class="d-flex" role="search">
+						<input class="form-control me-2" type="search"
+							placeholder="Search" aria-label="Search">
+						<button class="btn btn-outline-success" type="submit">Search</button>
+					</form>
+				</div>
 						
 						
 
